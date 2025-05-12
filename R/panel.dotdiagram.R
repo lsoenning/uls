@@ -18,10 +18,7 @@
 #' @param downwards whether the dot diagram should be drawn downwards
 #' @param leftwards whether the vertical dot diagram should be drawn leftwards
 #'
-#' @returns
 #' @export
-#'
-#' @examples
 panel.dotdiagram <- function(
     x,
     n_bins=20,

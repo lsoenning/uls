@@ -5,8 +5,7 @@
 #'
 #' @param type character string specifying which lines should be drawn; see details below
 #' @param side inherited from lattice (check if function works without this)
-#' @param ...
-#' @param line.col ste color of axis line
+#' @param line.col set color of axis line
 #'
 #' @details A four-number character string is used to specify which axes to draw, where a "1" means that the line will be drawn, "0" means it will be omitted. The sequence starts at the top (north -- east -- south -- west):
 #'
@@ -18,10 +17,7 @@
 #' * `"0001"` for left axis only
 #' * `"1011"` for a C-shaped framework
 #' * `"0111"` for a U-shaped framework
-#' @returns
 #' @export
-#'
-#' @examples
 axis_ls <- function(type = "0011", side, ..., line.col){
   if(type == "0011"){
     if (side %in% c("left", "bottom")) {
