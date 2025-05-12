@@ -2,8 +2,12 @@
 #'
 #' @export
 theme_ls <- function(){
-  ggplot2::theme_classic() + ggplot2::theme_replace(
 
+  '%+replace%' <- ggplot2::'%+replace%'
+
+  ggplot2::theme_classic() %+replace%
+
+    ggplot2::theme(
       #grid elements
       axis.line.x = ggplot2::element_line(colour = 'black', linewidth = 0.25, lineend="round"),
       axis.line.y = ggplot2::element_line(colour = 'black', linewidth = 0.25, lineend="round"),
