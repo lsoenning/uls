@@ -1,10 +1,8 @@
-## functions for axes in lattice plots
-#--------------------------------------------------------------------------------
-
 #' Control axis appearance in lattice plots
 #'
 #' @param type character string specifying which lines should be drawn; see details below
 #' @param side inherited from lattice (check if function works without this)
+#' @param ... parameter settings that are passed through
 #' @param line.col set color of axis line
 #'
 #' @details A four-number character string is used to specify which axes to draw, where a "1" means that the line will be drawn, "0" means it will be omitted. The sequence starts at the top (north -- east -- south -- west):
@@ -21,8 +19,8 @@
 axis_ls <- function(type = "0011", side, ..., line.col){
   if(type == "0011"){
     if (side %in% c("left", "bottom")) {
-      col <- trellis.par.get("axis.text")$col
-      axis.default(side, ..., line.col = col)
+      col <- lattice::trellis.par.get("axis.text")$col
+      lattice::axis.default(side, ..., line.col = col)
       if (side == "bottom")
         grid::grid.lines(y = 0)
       if (side == "left")
@@ -31,8 +29,8 @@ axis_ls <- function(type = "0011", side, ..., line.col){
   }
   if(type == "1011"){
     if (side %in% c("left", "bottom", "top")) {
-      col <- trellis.par.get("axis.text")$col
-      axis.default(side, ..., line.col = col)
+      col <- lattice::trellis.par.get("axis.text")$col
+      lattice::axis.default(side, ..., line.col = col)
       if (side == "bottom")
         grid::grid.lines(y = 0)
       if (side == "left")
@@ -43,8 +41,8 @@ axis_ls <- function(type = "0011", side, ..., line.col){
   }
   if(type == "0111"){
     if (side %in% c("left", "bottom", "right")) {
-      col <- trellis.par.get("axis.text")$col
-      axis.default(side, ..., line.col = col)
+      col <- lattice::trellis.par.get("axis.text")$col
+      lattice::axis.default(side, ..., line.col = col)
       if (side == "bottom")
         grid::grid.lines(y = 0)
       if (side == "left")
@@ -55,8 +53,8 @@ axis_ls <- function(type = "0011", side, ..., line.col){
   }
   if(type == "1111"){
     if (side %in% c("left", "bottom", "top", "right")) {
-      col <- trellis.par.get("axis.text")$col
-      axis.default(side, ..., line.col = col)
+      col <- lattice::trellis.par.get("axis.text")$col
+      lattice::axis.default(side, ..., line.col = col)
       if (side == "bottom")
         grid::grid.lines(y = 0)
       if (side == "left")
@@ -69,39 +67,35 @@ axis_ls <- function(type = "0011", side, ..., line.col){
   }
   if(type == "0001"){
     if (side %in% "left") {
-      col <- trellis.par.get("axis.text")$col
-      axis.default(side, ..., line.col = col)
+      col <- lattice::trellis.par.get("axis.text")$col
+      lattice::axis.default(side, ..., line.col = col)
       if (side == "left")
         grid::grid.lines(x = 0)
     }
   }
   if(type == "0010"){
     if (side %in% "bottom") {
-      col <- trellis.par.get("axis.text")$col
-      axis.default(side, ..., line.col = col)
+      col <- lattice::trellis.par.get("axis.text")$col
+      lattice::axis.default(side, ..., line.col = col)
       if (side == "left")
         grid::grid.lines(x = 0)
     }
   }
   if(type == "1000"){
     if (side %in% "top") {
-      col <- trellis.par.get("axis.text")$col
-      axis.default(side, ..., line.col = col)
+      col <- lattice::trellis.par.get("axis.text")$col
+      lattice::axis.default(side, ..., line.col = col)
       if (side == "left")
         grid::grid.lines(x = 0)
     }
   }
   if(type == "0100"){
     if (side %in% "right") {
-      col <- trellis.par.get("axis.text")$col
-      axis.default(side, ..., line.col = col)
+      col <- lattice::trellis.par.get("axis.text")$col
+      lattice::axis.default(side, ..., line.col = col)
       if (side == "left")
         grid::grid.lines(x = 0)
     }
   }
-
 }
-
-usethis::use_data(axis_ls, overwrite = TRUE)
-
 

@@ -38,7 +38,7 @@ panel.dotdiagram <- function(
   }
   if(vertical==T){
     if(leftwards == F){
-      panel.points(
+      lattice::panel.points(
         x = (rep(1:max(counts), each=n_bins)*scale_y) + x_anchor,
         y = rep(seq(seq_min, seq_max, length.out=n_bins), max(counts)), pch=set_pch,
         col=dot_col_matrix, cex=set_cex, alpha=set_alpha, fontfamily=set_fontfamily,
@@ -46,7 +46,7 @@ panel.dotdiagram <- function(
       )
     }
     if(leftwards == T){
-      panel.points(
+      lattice::panel.points(
         x = -((rep(1:max(counts), each=n_bins)*scale_y)) + x_anchor,
         y = rep(seq(seq_min, seq_max, length.out=n_bins), max(counts)), pch=set_pch,
         col=dot_col_matrix, cex=set_cex, alpha=set_alpha, fontfamily=set_fontfamily,
@@ -56,7 +56,7 @@ panel.dotdiagram <- function(
   }
   if(vertical==F){
     if(downwards == F){
-      panel.points(
+      lattice::panel.points(
         y = (rep(1:max(counts), each=n_bins)*scale_y) + y_anchor,
         x = rep(seq(seq_min, seq_max, length.out=n_bins), max(counts)), pch=set_pch,
         col=dot_col_matrix, cex=set_cex, alpha=set_alpha, fontfamily=set_fontfamily,
@@ -64,7 +64,7 @@ panel.dotdiagram <- function(
       )
     }
     if(downwards == T){
-      panel.points(
+      lattice::panel.points(
         y = -((rep(1:max(counts), each=n_bins)*scale_y)) + y_anchor,
         x = rep(seq(seq_min, seq_max, length.out=n_bins), max(counts)), pch=set_pch,
         col=dot_col_matrix, cex=set_cex, alpha=set_alpha, fontfamily=set_fontfamily,

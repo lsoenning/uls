@@ -1,18 +1,26 @@
+#' Modified ggplot2 "theme_classic()"
+#'
+#' @param base_size base size
+#' @param base_family base family
+#' @param base_line_size base line size
+#' @param base_rect_size base rect size
+#'
+#' @export
 theme_classic_ls <- function (
     base_size = 11,
     base_family = "",
     base_line_size = base_size/22,
     base_rect_size = base_size/22)
 {
-  theme_bw(base_size = base_size,
+  ggplot2::theme_bw(base_size = base_size,
            base_family = base_family,
            base_line_size = base_line_size,
-           base_rect_size = base_rect_size) %+replace%
-    theme(panel.border = element_blank(),
-          panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank(),
-          axis.line = element_line(colour = "black",
-                                   linewidth = rel(1)),
-          legend.key = element_blank(),
-          strip.background = element_blank(), complete = TRUE)
+           base_rect_size = base_rect_size) + ggplot2::theme_replace(
+             panel.border = ggplot2::element_blank(),
+             panel.grid.major = ggplot2::element_blank(),
+             panel.grid.minor = ggplot2::element_blank(),
+             axis.line = ggplot2::element_line(colour = "black",
+                                               linewidth = ggplot2::rel(1)),
+             legend.key = ggplot2::element_blank(),
+             strip.background = ggplot2::element_blank(), complete = TRUE)
 }

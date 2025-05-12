@@ -11,6 +11,8 @@ axis_ls(type = "0011", side, ..., line.col)
 
 \item{side}{inherited from lattice (check if function works without this)}
 
+\item{...}{parameter settings that are passed through}
+
 \item{line.col}{set color of axis line}
 }
 \description{

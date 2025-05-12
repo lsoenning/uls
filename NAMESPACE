@@ -2,3 +2,6 @@
 
 export(axis_ls)
 export(panel.dotdiagram)
+export(theme_classic_ls)
+export(theme_dotplot)
+export(theme_ls)
