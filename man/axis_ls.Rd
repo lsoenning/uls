@@ -4,16 +4,16 @@
 \alias{axis_ls}
 \title{Control axis appearance in lattice plots}
 \usage{
-axis_ls(type = "0011", side, ..., line.col)
+axis_ls(side, ..., line.col, type = "0011")
 }
 \arguments{
-\item{type}{character string specifying which lines should be drawn; see details below}
-
 \item{side}{inherited from lattice (check if function works without this)}
 
 \item{...}{parameter settings that are passed through}
 
 \item{line.col}{set color of axis line}
+
+\item{type}{character string specifying which lines should be drawn; see details below}
 }
 \description{
 Control axis appearance in lattice plots
