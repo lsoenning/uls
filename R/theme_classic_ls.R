@@ -24,7 +24,11 @@ theme_classic_ls <- function (
       panel.grid.major = ggplot2::element_blank(),
       panel.grid.minor = ggplot2::element_blank(),
       axis.line = ggplot2::element_line(colour = "black",
-                                        linewidth = ggplot2::rel(1)),
+                                        lineend = "round",
+                                        linewidth = ggplot2::rel(.8)),
+      axis.ticks = ggplot2::element_line(colour = "black",
+                                         lineend = "round",
+                                         linewidth = ggplot2::rel(.8)),
       legend.key = ggplot2::element_blank(),
       strip.background = ggplot2::element_blank(), complete = TRUE)
 }
